@@ -1,16 +1,16 @@
 
-s = require('express');
+var express = require('express');
     fs = require("fs");
 
 
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-  fs.readFile('index.html',function (err,data)  {
-	if (err) throw err;
-	response.send(data);
-});
-  response.send('data by indira');
+//  fs.readFile('index.html',function (err,data)  {
+//	if (err) throw err;
+//	console.logesponse.send(data);
+//});
+  response.send(fs.readFileSync("./index.html".toString());
 });
 
 var port = process.env.PORT || 5000;
