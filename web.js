@@ -11,7 +11,7 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
 
- response.send(buf.toString(buffer)) ;
+ response.send(buffer.toString(buffer)) ;
 });
 
 
