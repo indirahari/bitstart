@@ -14,10 +14,10 @@ app.get('/', function(request, response) {
 	response.send('error');
 });
 
-buf = new Buffer(256);
-len = buf.write('\u00bd + \u00bc = \u00be', 0);
-response.send(len + "hello indira " + buf.toString('utf8', 0, len));
-
+//buf = new Buffer(256);
+//len = buf.write('\u00bd + \u00bc = \u00be', 0);
+//response.send(len + "hello indira " + buf.toString('utf8', 0, len));
+response.send('hello indira');
 
 
 
