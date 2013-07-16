@@ -3,7 +3,7 @@ var express = require('express');
 
  var buff = new Buffer(25);
 
-var json = JSON.stringify(buff);
+
 
 
 var app = express.createServer(express.logger());
@@ -14,9 +14,17 @@ app.get('/', function(request, response) {
 	response.send('error');
 });
 
-   json = JSON.stringify(buff);
-var copy = new Buffer(JSON.parse(json));  
-  response.send(copy);
+buf = new Buffer(256);
+len = buf.write('\u00bd + \u00bc = \u00be', 0);
+response.send(len + "hello indira " + buf.toString('utf8', 0, len));
+
+
+
+
+
+
+
+  
 });
 
 var port = process.env.PORT || 5000;
