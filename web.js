@@ -2,6 +2,10 @@ var express = require('express');
     fs = require("fs");
 
  var buff = new Buffer(25);
+
+var json = JSON.stringify(buff);
+
+
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
@@ -9,8 +13,10 @@ app.get('/', function(request, response) {
 	if (err) throw err;
 	response.send('error');
 });
-  
-  response.send(buff);
+
+   json = JSON.stringify(buff);
+var copy = new Buffer(JSON.parse(json));  
+  response.send(copy);
 });
 
 var port = process.env.PORT || 5000;
